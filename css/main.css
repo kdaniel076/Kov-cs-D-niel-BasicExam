@@ -1,0 +1,45 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.main-div {
+    background-image: url("/assets/site/mapblue.jpg");
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background-position: center;
+}
+
+.aside-div {
+    background-color: #333333;
+    position: absolute;
+    right: 0;
+    width: 20%;
+    height: 100%;
+}
+
+.main-div__char-divs {
+    width: 130px;
+    height: 90px;
+    margin-top: 6px;
+    margin-right: 10px;
+    margin-bottom: 7px;
+    margin-left: 13px;
+    bottom: 0px;
+    display: inline-block;
+    text-align: center;
+}
+
+.main-div__char-spans {
+    font-size: 12px;
+    display: inline-block;
+    horizontal-align: middle;
+}
+
+.main-div__char-pics {
+    height: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
