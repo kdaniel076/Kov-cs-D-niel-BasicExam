@@ -14,6 +14,7 @@ function successGetGameOfThronesCharacterDatas(xhttp) {
   var userDatas = JSON.parse(xhttp.responseText);
   // Innen hívhatod meg a többi függvényed
   displayCharacters(userDatas);
+  showDetails(userDatas);
 }
 
 getGameOfThronesCharacterDatas(
@@ -23,6 +24,14 @@ getGameOfThronesCharacterDatas(
 
 // Live servert használd mindig!!!!!
 /* IDE ÍRD A FÜGGVÉNYEKET!!!!!! NE EBBE AZ EGY SORBA HANEM INNEN LEFELÉ! */
+
+function showDetails(charBio) {
+  console.log(charBio);
+}
+
+function addClickEventListener(element, charBio) {
+  element.addEventListener('click', function() { showDetails(charBio) });
+}
 
 function displayCharacters(userDatas) {
   var aliveCharacters = [];
@@ -40,17 +49,14 @@ function displayCharacters(userDatas) {
       }
     }
   }
-
-  function showDetails(i) {
-    showDetails(i)
-    alert(aliveCharacters[i].name);
-  }
   
   for (var i = 0; i < aliveCharacters.length; i++) {
     var div = document.querySelector(".main-div")
     div.innerHTML += `<div id="i" class="main-div__char-divs">
                       <img class="main-div__char-pics" src="${aliveCharacters[i].portrait}">
-                      <span onclick="showDetails(${i})" class="main-div__char-spans">${aliveCharacters[i].name}</span>
+                      <span class="main-div__char-spans">${aliveCharacters[i].name}</span>
                       </div>`
+    var charSpan = document.querySelectorAll(".main-div__char-spans")
+    addClickEventListener(charSpan[i], aliveCharacters[i].bio)
   }
 }
